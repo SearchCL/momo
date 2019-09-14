@@ -19,13 +19,9 @@ html,body{
     background-image: url(../imgs/nonces.jpg);
     width: 100%;
     height: 100%;
-    min-width: 30%;
     background-size:cover;
     background-position:top left;
-    background-repeat: no-repeat;
-    display: inline-block;
-	position: fixed;
-	top: 0;
+    background-repeat: no-repeat;  
 }
 .nonce{
     background-image: -webkit-gradient(linear,left top,left bottom,
@@ -35,38 +31,37 @@ html,body{
     width: 100%
 }
 .nonces{ 
-    width: 100%;
-    /* height: 300px; */
-    text-align: center;
+    width: 500px;
+    height: 300px;
     /* background: red; */
-    position: relative;
-    top: 220px;
-    /* left: 35%; */
+    position: fixed;
+    top: 25%;
+    left: 33.8%;
 }
 .nonces h1{
-    padding-top: 75px;
+    padding-top: 10%;
     width: 315px;
     text-align: center;
     font-weight: 100;
     color: white;
     border-bottom: 1px solid white;
     margin: 0 auto;
-    padding-bottom: 15px;
+    padding-bottom: 3%
 }
 
 .nonces p{
     width: 100px;
-    padding-top: 15px;
+    padding-top: 5%;
     font-size: 22px;
     text-align: center;
     margin: 0 auto;
     color: white;
     font-weight: 100;
     border-bottom: 1px solid white;
-    padding-bottom: 15px;   
+    padding-bottom: 3%;   
 }
 .nonces .link{
-    padding-top:40px;
+    padding-top:10%;
     text-align: center;
     width: 300px;
     margin: 0 auto;
@@ -81,57 +76,4 @@ html,body{
     height: 36px;
     border: 1px solid white;
     border-radius: 30px;
-}
-/* 关于 */
-.alex{
-    max-width: 55%;
-    height: 90%;
-    float: right;
-    display: none;
-    padding: 5%;
-    padding-left: 10%;
-}
-.about h1{
-    font-size: 3.2rem;
-    line-height: 7.2rem;
-    font-weight: 400;
-}
-.about span{
-    display: block;
-    font-size: 24px;
-    width: 345px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;    
-}
-.about p{
-    padding-top: 30px;
-    line-height: 40px;
-    width: 465px;
-    border-bottom: 1px solid #ddd;
-    display: inline-block;
-    padding-bottom: 30px;
-}
-#uls li a{
-	font-size: 28px;
-	color: black;
-	font-weight: 700;
-	width: 85%;
-	display: block;
-}
-#uls li p{
-	width: 85%;
-	display: block;
-	padding: 20px 0 0 0;
-	line-height: 1.6rem;
-	font-size: 14px;
-	color: #999;
-}
-#uls li img{
-	width: 85%;
-	margin-top: 10px;
-}
-.hrs{
-	width: 30%;
-	margin: 2.2rem 0;
-	border-top: 1px solid #ddd;
 }
