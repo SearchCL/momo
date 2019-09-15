@@ -7,6 +7,8 @@
     <title>兴趣使然的HTML记录</title>
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jQuery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
 </head>
 <body>
@@ -17,15 +19,104 @@
                 <h1>兴趣使然的HTML记录</h1>
                 <p>学无止境</p>
                 <div class="link">
-                    <a href="#">首页</a>
-                    <a href="#">关于</a>
+                    <a id="index" href="#">首页</a>
+                    <a id="about" href="#">关于</a>
                     <a href="#">联系</a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- 关于 -->
+    <div class="about alex">
+        <h1>About me...</h1>
+        <span>刹那芳华</span>
+        <p> 一个简单的记录 个人简单的总结 <br>
+        朝露昙花,咫尺天涯<br>
+        人道是黄河十曲，毕竟东流去<br>
+        八千年玉老，一夜枯荣，问苍天此生何必<br>
+        昨夜风吹处，落英听谁细数<br>
+        九万里苍穹，御风弄影，谁人与共<br>
+        千秋北斗，瑶宫苦寒，不若神仙眷侣，百年江湖
+        </p>
+    </div>
+    <!-- 首页 -->
+    <div class="index alex">
+        <ul id="uls">
+            <!-- {{ data.data.url }} -->
+			<li v-for="item in data">
+				<a :href=item.url>{{item.title}}</a>
+				<p>{{item.words}}</p>
+				<img :src=item.imgs alt="">
+				<div class="hrs"></div>
+			</li>
+        </ul>
+    </div>
 </body>
 </html>
-<script>
-    
+<script> //页面逻辑
+    var a = true; //判断初次点击值
+    $("#about").click(function(){
+        if(a){
+            a=false;
+            $(".nonc").animate({
+                width:'-=70%'
+            });
+            $('.about').css({"display":"block"});
+            $(".about").animate({
+                height:"100%",
+                width:'+=70%',
+            })
+        }
+    });
+    $("#index").click(function(){
+        if(a){
+            a=false;
+            $(".nonc").animate({
+                width:'-=70%'
+            });
+            $('.index').css({"display":"block"});
+            $(".index").animate({
+                height:"100%",
+                width:'+=70%',
+            })
+        }
+    });
+    //初次点击结束
+    //初次点击后点击
+    $("#about").click(function(){
+        if(!a){
+            $('.about').css({"display":"block"})
+            $('.about').animate({
+                height:"100%",
+                width:"+=70%",
+            })
+            $('.index').css({"display":"none"})
+        }
+    });
+    $('#index').click(function(){
+        if(!a){
+            $('.index').css({"display":"block"})
+            $(".index").animate({
+                height:"100%",
+                width:"+=70%",
+            })
+            $('.about').css({"display":"none"})
+        }
+    });
+    new Vue({
+        el: '#uls',
+        data () {
+        return {
+            data: null
+            }
+        },
+        mounted () {
+            axios.get('data/data.json')
+			.then(response => (
+			this.data = response.data))
+			.catch(function (error) { // 请求失败处理
+			console.log(error);
+        });
+    }
+})
 </script>
