@@ -16,12 +16,12 @@ html,body{
     height: 100%;
 }
 /* 开始 */
-#details img{
+#details_es6 img{
 	width: 85%;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
-#details p{
+#details_es6 p{
 	font-size: 40px;
 	width: 100%;
 	position: relative;
@@ -34,7 +34,7 @@ html,body{
 	bottom: 9px;
 	left: 1px;
 }
-#details .black{
+#details_es6 .black{
 	width: 40px;
 	height: 40px;
 	display: inline-block;
@@ -70,4 +70,25 @@ html,body{
 .text{
 	display: block;
 	width: 90%;
+}
+#details_js img{
+	width: 85%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#details_js .black{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	position: relative;
+	bottom: 40px;
+	right: 90px;
+	margin-top: 0 !important;
+	float: left;
+}
+#details_js p{
+	font-size: 40px;
+	width: 100%;
+	position: relative;
+	right: 40px;
 }

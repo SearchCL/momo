@@ -1,17 +1,17 @@
 [{
-	"url":"ES7_ES8_ES9.html",
+	"url":"#details_es6",
 	"title":"细数JavaScript ES6 ES7 ES8 ES9 新特性",
 	"words":"ECMAScript的演化不会停止，但是我们完全没必要害怕。除了ES6这个史无前例的版本带来了海量的信息和知识点以外，之后每年一发的版本都仅仅带有少量的增量更新，一年更新的东西花半个小时就能搞懂了，完全没必要畏惧。本文将带您花大约一个小时左右的时间，迅速过一遍ES7,ES8,ES9的新特性",
 	"imgs":"imgs/es6_es7_es8_es9.jpg"
 },
 {
-	"url":"JS.html",
+	"url":"#details_js",
 	"title":"那些优雅灵性的js代码片段",
 	"words":"如果你甘于平凡，写代码对你来说可以就是Ctrl+C和Ctrl+V；如果你充满创造力，写代码也可以成为一门艺术。我们在平时总会遇到一些堪称优雅灵性的代码片段，在这里，仅以我之见，列举出我所见到的那一部分",
 	"imgs":"imgs/image-spider.jpg"
 },
 {
-	"url":"JS.html",
+	"url":"#details_js",
 	"title":"【译】Chrome浏览器开发者工具的13个有趣技巧",
 	"words":"Chrome浏览器提供了一套非常出色的开发者工具来帮助您在Web平台上开发。下面我将介绍13个有趣的技巧，掌握他们对你只有好处",
 	"imgs":"imgs/6.gif"
