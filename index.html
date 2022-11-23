@@ -1,233 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>兴趣使然的HTML记录</title>
-    <link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/details.css"/>
-    <script src="js/jQuery.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
+    <meta charset="utf-8">
+    <title>loveHeart</title>
+    <link rel="shortcut icon" href="http://zhouql.vip/images/心.png" type="image/x-icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        p{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: pink;
+            animation: k 1.5s ease-in-out infinite;
+        }
+        @keyframes k{
+            100%{
+                font-size: 24px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- 开始 -->
-    <div class="nonc">
-        <div class="nonce">
-            <div class="nonces">
-                <h1>兴趣使然的HTML记录</h1>
-                <p>学无止境</p>
-                <div class="link">
-                    <a id="index" href="#">首页</a>
-                    <a id="about" href="#">关于</a>
-                    <a href="#">联系</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 关于 -->
-    <div class="about alex">
-        <h1>About me...</h1>
-        <span>刹那芳华</span>
-        <p> 一个简单的记录 个人简单的总结 <br>
-        朝露昙花,咫尺天涯<br>
-        人道是黄河十曲，毕竟东流去<br>
-        八千年玉老，一夜枯荣，问苍天此生何必<br>
-        昨夜风吹处，落英听谁细数<br>
-        九万里苍穹，御风弄影，谁人与共<br>
-        千秋北斗，瑶宫苦寒，不若神仙眷侣，百年江湖
-        </p>
-    </div>
-    <!-- 首页 -->
-    <div class="index alex" name="myDetails">
-        <ul id="uls">
-            <!-- {{ data.data.url }} -->
-			<li v-for="item in data">
-				<a href="#" onclick="get($(this))" :data=item.url>{{item.title}}</a>
-				<p>{{item.words}}</p>
-				<img :src=item.imgs alt="">
-				<div class="hrs"></div>
-			</li>
-        </ul>
-		<div id="details_data" style="display: none;">
-			<div id = "details_es6" style="display: none;">
-				<a href="#" class="black" onclick="hide()"><img id="black" src="imgs/black.png" alt=""></a>
-				<!-- 返回按钮 -->
-				<p id="title">细解&nbsp;<b>JavaScript ES7 ES8 ES9</b>&nbsp;新特性</p>
-				<!-- 标题 -->
-				<span id="time">2019-04-02&nbsp;&nbsp;&nbsp;·&nbsp;标签:&nbsp;<span>JavaScript</span></span>
-				<img src="imgs/es6_es7_es8_es9.jpg" alt="">
-				<n id="text">
-				题记：本文提供了一个在线PPT版本，方便您浏览 <a href="https://tuobaye.com/demo/es7_es8_es9/#/">细解JAVASCRIPT ES7 ES8 ES9 新特性 在线PPT ver </a>
-				<br>
-				<br>
-				本文的大部分内容译自作者Axel Rauschmayer博士的网站，想了解更多关于作者的信息，可以浏览
-				<br>
-				<a href="https://exploringjs.com/">Exploring JS: JavaScript books for programmersa</a>
-				</n>
-				<n class="Subheading">
-					那些与<b>ECMAScript</b>有关的事情
-				</n>
-				<br>
-				<n class="subtitle">
-					谁在设计<b>ECMAScript?</b>
-				</n>
-				<br>
-				<br>
-				<br>
-				<n class="text">
-					TC39 (Technical Committee 39)
-					<br>
-					<br>
-					TC39 是推进 JavaScript 发展的委员会。其会员都是公司（其中主要是浏览器厂商）。TC39 定期召开会议，会议由会员公司的代表与特邀专家出席。会议纪录都可在网上查看，可以让你对 TC39 如何工作有一个清晰的概念
-					<br>
-					<br>
-					很有意思的是，TC39 实行的是协商一致的原则：通过一项决议必须得到每一位会员（公司代表）的赞成。
-					<br>
-					<br>
-				</n>
-				<n class="subtitle">
-					<b>ECMAScript?</b>的发布周期
-				</n>
-				<br>
-				<br>
-				<br>
-				<n class="text">
-					在2015年发布的 ECMAScript（ES6）新增内容很多，在 ES5 发布近 6 年（2009-11 至 2015-6）之后才将其标准化。两个发布版本之间时间跨度如此之大主要有两大原因：
-					<br>
-					<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.版率先完成的特性，必须等待新版的完成才能发布。<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.那些需要花长时间完成的特性，也顶着很大的压力被纳入这一版本，因为如果推迟到下一版本发布意
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;味着又要等很久，这种特性也会推迟新的发布版本。
-					<br>
-					<br>
-					很有意思的是，TC39 实行的是协商一致的原则：通过一项决议必须得到每一位会员（公司代表）的赞成。
-					<br>
-					<br>
-				</n>
-				<n class="subtitle">
-					<b>ECMAScript?</b>的发布流程
-				</n>
-				<br>
-				<br>
-				<br>
-				<n class="text">
-					每个 ECMAScript 特性的建议将会从阶段 0 开始， 然后经过下列几个成熟阶段。其中从一个阶段到下一个阶段必须经过 TC39 的批准
-					<br>
-					<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.stage-0 - Strawman: just an idea, possible Babel plugin. <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任何讨论、想法、改变或者还没加到提案的特性都在这个阶段。只有TC39成员可以提交。。<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.stage-1 - Proposal: this is worth working on. <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一份新特性的正式建议文档。提案必须指明此建议的潜在问题，例如与其他特性之间的关联 <br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.stage-2 - Draft: initial spec. <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;草案是规范的第一个版本。其与最终标准中包含的特性不会有太大差别 <br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.stage-3 - Candidate: complete spec and initial browser implementations.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;候选阶段，获得具体实现和用户的反馈。此后，只有在实现和使用过程中出现了重大问题才会修改 <br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.stage-4 - Finished: will be added to the next yearly release.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已经准备就绪，该特性会出现在下个版本的ECMAScript规范之中 <br><br>
-					<br>
-					当前的stage 1-3列表可以查看这里 –> <a href="https://github.com/tc39/proposals">ECMAScript proposals </a>
-					<br>
-					<br>
-				</n>
-			</div>
-			<div id = "details_js" style="display: none;">
-				<a href="#" class="black" onclick="hide()"><img id="black" src="imgs/black.png" alt=""></a>
-				<!-- 返回按钮 -->
-				<p id="title">建设中！！！</p>
-				<!-- 标题 -->
-			</div>
-		</div>
-    </div>
-</body>
-</html>
-<script> //页面逻辑
-    var a = true; //判断初次点击值
-    $("#about").click(function(){
-        if(a){
-            a=false;
-            $(".nonc").animate({
-                width:'-=70%'
-            });
-            $('.about').css({"display":"block"});
-            $(".about").animate({
-                height:"100%",
-                width:'+=70%',
-            })
-        }
-    });
-    $("#index").click(function(){
-        if(a){
-            a=false;
-            $(".nonc").animate({
-                width:'-=70%'
-            });
-            $('.index').css({"display":"block"});
-            $(".index").animate({
-                height:"100%",
-                width:'+=70%',
-            })
-        }
-    });
-    //初次点击结束
-    //初次点击后点击
-    $("#about").click(function(){
-        if(!a){
-            $('.about').css({"display":"block"})
-            $('.about').animate({
-                height:"100%",
-                width:"+=70%",
-            })
-            $('.index').css({"display":"none"})
-        }
-    });
-    $('#index').click(function(){
-        if(!a){
-            $('.index').css({"display":"block"})
-            $(".index").animate({
-                height:"100%",
-                width:"+=70%",
-            })
-            $('.about').css({"display":"none"})
-        }
-    });
-    new Vue({
-        el: '#uls',
-        data () {
-        return {
-            data: null
+    <!-- <p>XXX我爱你</p> -->
+    <canvas id="pinkboard"></canvas>
+    <script>
+        var settings = {
+            particles: {
+                length: 600,  // 爱心的大小
+                duration: 2,  // 爱心扩散速度，越小速度越快
+                velocity: 100,  // 爱心扩散速度，越小速度越慢
+                effect: -0.75, // 爱心收缩效果，比如：1扩散，-2收缩
+                size: 32, // 爱心数量
+            },
+        };
+        (function () { var b = 0; var c = ["ms", "moz", "webkit", "o"]; for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) { window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"]; window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"] } if (!window.requestAnimationFrame) { window.requestAnimationFrame = function (h, e) { var d = new Date().getTime(); var f = Math.max(0, 16 - (d - b)); var g = window.setTimeout(function () { h(d + f) }, f); b = d + f; return g } } if (!window.cancelAnimationFrame) { window.cancelAnimationFrame = function (d) { clearTimeout(d) } } }());
+ 
+        var Point = (function () {
+            function Point(x, y) {
+                this.x = (typeof x !== 'undefined') ? x : 0;
+                this.y = (typeof y !== 'undefined') ? y : 0;
             }
-        },
-        mounted(){
-            axios.get('data/data.json')
-			.then(response => (
-			this.data = response.data))
-			.catch(function (error) { // 请求失败处理
-			console.log(error);
-			});
-		},
-	})
-		var b
-		var c
-		function get(e){
-			console.log((e.context.attributes.data.nodeValue))
-			b = e.context.attributes.data.nodeValue
-			$("#uls").hide()
-			$("#details_data").show()
-			// $("#details_data").load(a)
-			console.log(c)
-			$(c).hide()
-			$(b).show()
-		}
-		function hide(){
-			console.log(b)
-			$("#uls").show();
-			$(b).hide()
-			c = b
-			console.log(c)
-		}
-</script>
+            Point.prototype.clone = function () {
+                return new Point(this.x, this.y);
+            };
+            Point.prototype.length = function (length) {
+                if (typeof length == 'undefined')
+                    return Math.sqrt(this.x * this.x + this.y * this.y);
+                this.normalize();
+                this.x *= length;
+                this.y *= length;
+                return this;
+            };
+            Point.prototype.normalize = function () {
+                var length = this.length();
+                this.x /= length;
+                this.y /= length;
+                return this;
+            };
+            return Point;
+        })();
+        var Particle = (function () {
+            function Particle() {
+                this.position = new Point();
+                this.velocity = new Point();
+                this.acceleration = new Point();
+                this.age = 0;
+            }
+            Particle.prototype.initialize = function (x, y, dx, dy) {
+                this.position.x = x;
+                this.position.y = y;
+                this.velocity.x = dx;
+                this.velocity.y = dy;
+                this.acceleration.x = dx * settings.particles.effect;
+                this.acceleration.y = dy * settings.particles.effect;
+                this.age = 0;
+            };
+            Particle.prototype.update = function (deltaTime) {
+                this.position.x += this.velocity.x * deltaTime;
+                this.position.y += this.velocity.y * deltaTime;
+                this.velocity.x += this.acceleration.x * deltaTime;
+                this.velocity.y += this.acceleration.y * deltaTime;
+                this.age += deltaTime;
+            };
+            Particle.prototype.draw = function (context, image) {
+                function ease(t) {
+                    return (--t) * t * t + 1;
+                }
+                var size = image.width * ease(this.age / settings.particles.duration);
+                context.globalAlpha = 1 - this.age / settings.particles.duration;
+                context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+            };
+            return Particle;
+        })();
+        var ParticlePool = (function () {
+            var particles,
+                firstActive = 0,
+                firstFree = 0,
+                duration = settings.particles.duration;
+            function ParticlePool(length) {
+                // create and populate particle pool
+                particles = new Array(length);
+                for (var i = 0; i < particles.length; i++)
+                    particles[i] = new Particle();
+            }
+            ParticlePool.prototype.add = function (x, y, dx, dy) {
+                particles[firstFree].initialize(x, y, dx, dy);
+                // handle circular queue
+                firstFree++;
+                if (firstFree == particles.length) firstFree = 0;
+                if (firstActive == firstFree) firstActive++;
+                if (firstActive == particles.length) firstActive = 0;
+            };
+            ParticlePool.prototype.update = function (deltaTime) {
+                var i;
+                // update active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].update(deltaTime);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+                // remove inactive particles
+                while (particles[firstActive].age >= duration && firstActive != firstFree) {
+                    firstActive++;
+                    if (firstActive == particles.length) firstActive = 0;
+                }
+            };
+            ParticlePool.prototype.draw = function (context, image) {
+                // draw active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].draw(context, image);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+            };
+            return ParticlePool;
+        })();
+        (function (canvas) {
+            var context = canvas.getContext('2d'),
+                particles = new ParticlePool(settings.particles.length),
+                particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+                time;
+            // get point on heart with -PI <= t <= PI
+            function pointOnHeart(t) {
+                return new Point(
+                    160 * Math.pow(Math.sin(t), 3),
+                    130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+                );
+            }
+            // creating the particle image using a dummy canvas
+            var image = (function () {
+                var canvas = document.createElement('canvas'),
+                    context = canvas.getContext('2d');
+                canvas.width = settings.particles.size;
+                canvas.height = settings.particles.size;
+                // helper function to create the path
+                function to(t) {
+                    var point = pointOnHeart(t);
+                    point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+                    point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+                    return point;
+                }
+                // create the path
+                context.beginPath();
+                var t = -Math.PI;
+                var point = to(t);
+                context.moveTo(point.x, point.y);
+                while (t < Math.PI) {
+                    t += 0.01; // baby steps!
+                    point = to(t);
+                    context.lineTo(point.x, point.y);
+                }
+                context.closePath();
+                // create the fill
+                context.fillStyle = '#ea80b0';
+                context.fill();
+                // create the image
+                var image = new Image();
+                image.src = canvas.toDataURL();
+                return image;
+            })();
+            // render that thing!
+            function render() {
+                // next animation frame
+                requestAnimationFrame(render);
+                // update time
+                var newTime = new Date().getTime() / 1000,
+                    deltaTime = newTime - (time || newTime);
+                time = newTime;
+                // clear canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                // create new particles
+                var amount = particleRate * deltaTime;
+                for (var i = 0; i < amount; i++) {
+                    var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+                    var dir = pos.clone().length(settings.particles.velocity);
+                    particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+                }
+                // update and draw particles
+                particles.update(deltaTime);
+                particles.draw(context, image);
+            }
+            // handle (re-)sizing of the canvas
+            function onResize() {
+                canvas.width = canvas.clientWidth;
+                canvas.height = canvas.clientHeight;
+            }
+            window.onresize = onResize;
+            // delay rendering bootstrap
+            setTimeout(function () {
+                onResize();
+                render();
+            }, 10);
+        })(document.getElementById('pinkboard'));
+        </script>
+</body>
+ 
+</html>
