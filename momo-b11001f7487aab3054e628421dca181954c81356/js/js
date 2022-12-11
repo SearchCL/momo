@@ -1,0 +1,9 @@
+
+
+
+	<div id = details>
+		<a href="#" class="black" onclick="hide()"><img id="black" src="imgs/black.png" alt=""></a>
+		<!-- 返回按钮 -->
+		<p id="title">建设中！！！</p>
+		<!-- 标题 -->
+	</div>
